@@ -1,0 +1,46 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class UC8Banner {
+
+    // Centralized HashMap for character patterns
+    private static final Map<Character, String[]> patternMap = new HashMap<>();
+
+    static {
+        // Define ASCII art patterns for characters
+        patternMap.put('O', new String[]{
+            " *** ",
+            "*   *",
+            "*   *",
+            "*   *",
+            " *** "
+        });
+
+        patternMap.put('P', new String[]{
+            "**** ",
+            "*   *",
+            "**** ",
+            "*    ",
+            "*    "
+        });
+
+        patternMap.put('S', new String[]{
+            " ****",
+            "*    ",
+            " *** ",
+            "    *",
+            "**** "
+        });
+    }
+
+    // Function to render banner for a given word
+    public static void displayBanner(String word) {
+        StringBuilder[] bannerLines = new StringBuilder[5];
+        for (int i = 0; i < 5; i++) {
+            bannerLines[i] = new StringBuilder();
+        }
+
+        for (char c : word.toCharArray()) {
+            String[] pattern = patternMap.get(Character.toUpperCase(c));
+            if (pattern != null) {
+               
