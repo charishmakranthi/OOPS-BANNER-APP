@@ -1,0 +1,50 @@
+public class BannerApp {
+
+    // Method to create letter O
+    public static String createO() {
+        return String.join("\n",
+                " *** ",
+                "*   *",
+                "*   *",
+                "*   *",
+                " *** "
+        );
+    }
+
+    // Method to create letter P
+    public static String createP() {
+        return String.join("\n",
+                "**** ",
+                "*   *",
+                "**** ",
+                "*    ",
+                "*    "
+        );
+    }
+
+    // Method to create letter S
+    public static String createS() {
+        return String.join("\n",
+                " ****",
+                "*    ",
+                " *** ",
+                "    *",
+                "**** "
+        );
+    }
+
+    public static void main(String[] args) {
+
+        String[] banner = {
+                createO(),
+                createO(),
+                createP(),
+                createS()
+        };
+
+        for (String letter : banner) {
+            System.out.println(letter);
+            System.out.println(); // space between letters
+        }
+    }
+}
